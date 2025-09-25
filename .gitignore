@@ -1,5 +1,5 @@
-#ignore the node_modules
+# Ignore the node_modules
 
 node_modules/
-
-#other entities
+.env
+# Other entities

@@ -70,10 +70,12 @@
 
 
 //server create karna 
-// require('dotenv').config();
 const express = require('express')
 const app = express() //express ko import kiya hai aap == naksha ya blue print / express ka instence 
 const db = require('./db');
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 
 
@@ -89,7 +91,7 @@ const PORT = process.env.PORT || 3000;
 // }
 
 
-app.get('/'  ,function (req , res){ // '/' ka mtlab kon se end point par show krna hai .
+app.get('/' ,function (req , res){ // '/' ka mtlab kon se end point par show krna hai .
     res.send('Welcome to our Hotel.')
 })
 
@@ -102,6 +104,7 @@ const MenuItemRoutes = require('./routes/menuItemRoutes');
 //Use the routers
 app.use('/person', personRouter); 
 app.use('/menu', MenuItemRoutes); 
+
 
 
 app.listen(PORT , ()=>{
